@@ -7,8 +7,9 @@ function imortJSContent(jsContent) {
 
 async function loadModule() {
     try {
-        const jsContent = fs.readFileSync("./A.js", "utf8");
+        const jsContent = fs.readFileSync("./module_exports.js", "utf8");
         let data = imortJSContent(jsContent);
+        console.log(data);
         const moduleA = await import(data);
         console.log(moduleA.myFunction()); // Outputs: Hello from myFunction
     } catch (error) {
